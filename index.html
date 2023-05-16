@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            transition: top 0.5s ease-in-out;
+            z-index: 999;
+        }
+
+        .navbar.hidden {
+            top: -100%;
+        }
+
+        .custom-txt {
+            font-family: 'Merienda', cursive;
+        }
+
+        .leaf-image {
+            position: absolute;
+            width: 190px;
+            height: 260px;
+            left: 3px;
+            top: 50px;
+            filter: blur(3px);
+            transform: rotate(-9deg);
+        }
+
+        .leaf-image-right {
+            position: absolute;
+            width: 188px;
+            height: 260px;
+            right: 19px;
+            top: 47px;
+            filter: blur(3px);
+            transform: rotate(-9deg);
+        }
+
+        .bg-img {
+            background-image: url('image\ 2.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .animate-bike {
+            animation: bike 5s linear infinite;
+        }
+
+        @keyframes bike {
+            0% {
+                transform: translateX(-10%);
+            }
+
+            100% {
+                transform: translateX(80%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar bg-green-50 shadow-md py-3">
+        <div class="navbar-container mx-auto px-4 py-3 max-w-7xl sm:px-6 lg:px-8">
+            <div class="flex justify-between">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold text-gray-800">
+                        <img src="FoodTime.png" alt="">
+                    </a>
+                </div>
+                <div class="hidden sm:block sm:ml-6">
+                    <div class="flex">
+                        <a href="#" class="px-3 py-2 text-gray-700 font-medium mr-5">Home</a>
+                        <a href="#" class="px-3 py-2 text-gray-700 font-medium mr-5">Blog</a>
+                        <a href="#" class="px-3 py-2 text-gray-700 font-medium mr-5">About Us</a>
+                        <a href="#" class="px-3 py-2 text-gray-700 font-medium mr-5">En
+                            <i class="fa fa-chevron-down"></i>
+                        </a>
+                        <a class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-10 rounded-full mr-5">Log
+                            In</a>
+                        <a class="relative bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span
+                                class="absolute top-1 right-1 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-orange-500 rounded-full">2</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="sm:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Home</a>
+                <a href="#"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Blog</a>
+                <a href="#"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">About
+                    Us</a>
+                <a class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-10 rounded-full mr-5">Log
+                    In</a>
+                <a class="relative bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span
+                        class="absolute top-1 right-1 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-orange-500 rounded-full">2</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="flex justify-center items-center pt-20 h-screen bg-green-50">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-center px-16">
+            <div class="md:w-3/5 text-center md:text-left">
+                <img src="leaf.png" alt="" class="leaf-image">
+                <h1 class="font-bold text-6xl mb-4 text-green-700 custom-txt">Order food online from your favourite
+                    local
+                    restaurants.</h1>
+                <p class="text-gray-600 mb-8 text-1xl font-bold">Freshly made food delivered to your door.</p>
+                <div class="flex justify-center md:justify-start">
+                    <div class="relative w-full">
+                        <div class="flex w-full">
+                            <input class="border border-gray-500 rounded-full pr-16 pl-6 py-3 w-full focus:outline-none"
+                                type="text" placeholder="Enter your address">
+                            <button
+                                class="bg-green-600 text-white rounded-full px-8 ml-2 focus:outline-none absolute right-0 top-0 bottom-0">
+                                <i class="fa fa-search"></i> Search
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-2/5">
+                <img src="leaf.png" alt="" class="leaf-image-right">
+                <img class="w-full h-auto object-cover object-center rounded-lg md:ml-16" src="image 1.png"
+                    alt="food image">
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-center items-center h-screen bg-white-50">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-center px-16 overflow-x-hidden">
+            <div class="md:w-2/5 text-center md:text-left">
+                <h1 class="font-bold text-5xl mb-4 text-green-700 custom-txt">Explore your favourite city’s food.</h1>
+                <p class="text-gray-600 mb-8 text-1xl font-semibold">Lorem ipsum dolor sit amet consectetur. Ornare
+                    massa nunc nibh tristique.
+                    Non ligula tristique ut ut libero sit convallis maecenas. At egestas auctor porta mattis.</p>
+                <div class="flex justify-center md:justify-start">
+                    <div class="flex">
+                        <button
+                            class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-10 rounded-full mr-5">
+                            Explore <i class="fa fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-3/5 bg-img">
+                <img class="w-full h-auto object-cover object-center rounded-lg md:ml-16 animate-bike" src="bike.png"
+                    alt="bike image">
+            </div>
+        </div>
+    </div>
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.querySelector(".navbar").classList.remove("hidden");
+            } else {
+                document.querySelector(".navbar").classList.add("hidden");
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+</body>
+
+</html>
