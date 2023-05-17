@@ -42,8 +42,8 @@
             position: absolute;
             width: 188px;
             height: 260px;
-            right: 19px;
-            top: 47px;
+            right: -27px;
+            top: 35px;
             filter: blur(3px);
             transform: rotate(-9deg);
         }
@@ -67,6 +67,76 @@
                 transform: translateX(80%);
             }
         }
+
+        /* Mobile Menu CSS */
+        .mobile-menu {
+            display: none;
+        }
+
+        .mobile-menu.open {
+            display: block;
+        }
+
+        .mobile-menu ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .mobile-menu ul li {
+            padding: 10px;
+        }
+
+        .mobile-menu ul li a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .mobile-menu ul li a:hover {
+            color: #333;
+        }
+
+        .mobile-menu .menu-icon {
+            display: block;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .main_div {
+            padding-top: 5rem;
+        }
+
+
+        @media (max-width: 768px) {
+            .hidden-mobile {
+                display: none;
+            }
+
+            .mobile-menu .menu-icon {
+                display: block;
+            }
+
+            .desktop-menu {
+                display: none;
+            }
+
+            .main_div {
+                padding-top: 18rem !important;
+            }
+
+            .secondary_div {
+                margin-top: 10rem;
+            }
+
+            .leaf-image {
+                left: -36px;
+                top: 155px;
+                filter: blur(5px);
+            }
+
+            .leaf-image-right {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -79,7 +149,7 @@
                         <img src="FoodTime.png" alt="">
                     </a>
                 </div>
-                <div class="hidden sm:block sm:ml-6">
+                <div class="hidden sm:block sm:ml-6 desktop-menu">
                     <div class="flex">
                         <a href="#" class="px-3 py-2 text-gray-700 font-medium mr-5">Home</a>
                         <a href="#" class="px-3 py-2 text-gray-700 font-medium mr-5">Blog</a>
@@ -96,35 +166,39 @@
                         </a>
                     </div>
                 </div>
+                <div class="sm:hidden menu-icon">
+                    <i class="fa fa-bars"></i>
+                </div>
             </div>
         </div>
         <!-- Mobile menu, show/hide based on menu state. -->
-        <div class="sm:hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Home</a>
-                <a href="#"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Blog</a>
-                <a href="#"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">About
-                    Us</a>
-                <a class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-10 rounded-full mr-5">Log
-                    In</a>
-                <a class="relative bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full">
-                    <i class="fa fa-shopping-cart"></i>
-                    <span
-                        class="absolute top-1 right-1 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-orange-500 rounded-full">2</span>
-                </a>
-            </div>
+        <div class="sm:hidden mobile-menu">
+            <ul>
+                <li><a href="#" class="px-3 py-2 text-gray-700 font-medium">Home</a></li>
+                <li><a href="#" class="px-3 py-2 text-gray-700 font-medium">Blog</a></li>
+                <li><a href="#" class="px-3 py-2 text-gray-700 font-medium">About Us</a></li>
+                <li><a href="#" class="px-3 py-2 text-gray-700 font-medium">En <i class="fa fa-chevron-down"></i></a>
+                </li>
+                <li><a href="#" class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-10 rounded-full">Log
+                        In</a></li>
+                <li>
+                    <a class="relative bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span
+                            class="absolute top-1 right-1 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-orange-500 rounded-full">2</span>
+                    </a>
+                </li>
+            </ul>
         </div>
     </nav>
-    <div class="flex justify-center items-center pt-20 h-screen bg-green-50">
+    <div class="flex justify-center items-center h-screen bg-green-50 main_div">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-center px-16">
             <div class="md:w-3/5 text-center md:text-left">
                 <img src="leaf.png" alt="" class="leaf-image">
                 <h1 class="font-bold text-6xl mb-4 text-green-700 custom-txt">Order food online from your favourite
                     local
                     restaurants.</h1>
+
                 <p class="text-gray-600 mb-8 text-1xl font-bold">Freshly made food delivered to your door.</p>
                 <div class="flex justify-center md:justify-start">
                     <div class="relative w-full">
@@ -146,7 +220,7 @@
             </div>
         </div>
     </div>
-    <div class="flex justify-center items-center h-screen bg-white-50">
+    <div class="flex justify-center items-center h-screen bg-white-50 secondary_div">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-center px-16 overflow-x-hidden">
             <div class="md:w-2/5 text-center md:text-left">
                 <h1 class="font-bold text-5xl mb-4 text-green-700 custom-txt">Explore your favourite city’s food.</h1>
@@ -179,6 +253,13 @@
             }
             prevScrollpos = currentScrollPos;
         }
+        // Mobile menu toggle
+        const menuIcon = document.querySelector('.menu-icon');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        menuIcon.addEventListener('click', function () {
+            mobileMenu.classList.toggle('open');
+        });
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
